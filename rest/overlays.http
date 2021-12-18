@@ -1,0 +1,38 @@
+### Create
+POST http://meshmash.vikaa.fi:49324/overlays HTTP/1.1
+Content-Type: application/json
+x-api-key: BC0B9f28FbD28CDC81c441A2db5Ea950
+
+{
+    "overlay_name":"overlay_b"
+}
+
+// overlay_a: ec843b7cb8ec481f8b83e311a95bcaed
+// overlay_b: 431165ef939e46d090a04882331c33ef
+
+### Get all overlays
+GET http://meshmash.vikaa.fi:49324/overlays
+Content-Type: application/json
+x-api-key: BC0B9f28FbD28CDC81c441A2db5Ea950
+
+
+### Get info of one overlay
+GET http://meshmash.vikaa.fi:49324/overlays/7150e56522ba4c6f94bb43833dc84259
+Content-Type: application/json
+x-api-key: BC0B9f28FbD28CDC81c441A2db5Ea950
+
+
+### add device
+POST http://meshmash.vikaa.fi:49324/overlays/431165ef939e46d090a04882331c33ef/devices HTTP/1.1
+Content-Type: application/json
+x-api-key: BC0B9f28FbD28CDC81c441A2db5Ea950
+
+{
+    "device_id": "ed8281b136004f07a8aa1db17f6e3fe4"
+}
+
+
+### delete
+DELETE http://meshmash.vikaa.fi:49324/overlays/31fb2b61a82b4c919296129d40c6c7ba
+Content-Type: application/json
+x-api-key: BC0B9f28FbD28CDC81c441A2db5Ea950

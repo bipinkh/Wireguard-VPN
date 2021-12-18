@@ -1,0 +1,61 @@
+### Create
+POST http://meshmash.vikaa.fi:49324/devices HTTP/1.1
+Content-Type: application/json
+x-api-key: BC0B9f28FbD28CDC81c441A2db5Ea950
+
+{ 
+    "hostname": "client_b2.project3.netsec.com", 
+    "public_ip": "172.18.18.18", 
+    "public_key": "VB+rD1zeIOCuFCouJEo97YU3yE+8ajNUxFjppAfJnGI=", 
+    "listen_port": 51820, 
+    "device_name": "client_b2"
+}
+
+//>> devices belonging to overlay_a
+// client_a1: 6ee5299ef87f458dba185aa4d60aa111
+// client_a2: 784366a9d378437583635c430815512f
+// server_a: 00cd601f3b8e43f88179a9dab71ffb4a
+
+//>> devices belonging to overlay_b
+// client_b1: b5c4274464fb4cff9b1cecd3d7adc8c2
+// client_b2: e82bec829c1a4f4498674284ac6c7390
+// server_b: ed8281b136004f07a8aa1db17f6e3fe4
+
+
+### Change IP and port of device
+PUT http://meshmash.vikaa.fi:49324/devices/44281b893c544407a653018d534ed206 HTTP/1.1
+Content-Type: application/json
+x-api-key: BC0B9f28FbD28CDC81c441A2db5Ea950
+
+{
+    "public_ip":"17.16.16.16",
+    "listen_port":51830
+}
+
+
+
+### List
+GET http://meshmash.vikaa.fi:49324/devices
+x-api-key: BC0B9f28FbD28CDC81c441A2db5Ea950
+
+
+### Get info
+GET http://meshmash.vikaa.fi:49324/devices/0aafd401e6704faf99ca413b2410b569
+x-api-key: BC0B9f28FbD28CDC81c441A2db5Ea950
+
+
+### getting the token
+GET http://meshmash.vikaa.fi:49324/devices/0aafd401e6704faf99ca413b2410b569/token
+x-api-key: BC0B9f28FbD28CDC81c441A2db5Ea950
+
+
+
+### wg config
+GET http://meshmash.vikaa.fi:49324/overlays/7150e56522ba4c6f94bb43833dc84259/devices/0aafd401e6704faf99ca413b2410b569/wgconfig
+Authorization: Bearer afRuJ2xqEs8CqDtBMXMqAg
+x-api-key: BC0B9f28FbD28CDC81c441A2db5Ea950
+
+
+### delete
+DELETE http://meshmash.vikaa.fi:49324/devices/f188a52e6d094ffb9fd44692782f874a
+x-api-key: BC0B9f28FbD28CDC81c441A2db5Ea950
