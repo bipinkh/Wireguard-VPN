@@ -41,5 +41,10 @@ echo "--------"
 
 BEARER_HEADER="Authorization: Bearer "${TOKEN}
 echo "getting the wconfig.."
-response1=$(curl -s --request GET -H "${HEADER_CONTENTTYPE}" -H "${HEADER_APIKEY}" -H "${BEARER_HEADER}" ${URI_GET_CONFIG} > ${EXPORT_CONF_LOCATION})
+echo > ${EXPORT_CONF_LOCATION} #clear the file
+echo "[Interface]" >> ${EXPORT_CONF_LOCATION}
+echo "PrivateKey = wKljiWJG3zjm6lrXJToyxx7O1tRVdYL7Lgf+ZuhsV04=" >> ${EXPORT_CONF_LOCATION}
+echo "ListenPort = 51820" >> ${EXPORT_CONF_LOCATION}
+echo "" >> ${EXPORT_CONF_LOCATION}
+response1=$(curl -s --request GET -H "${HEADER_CONTENTTYPE}" -H "${HEADER_APIKEY}" -H "${BEARER_HEADER}" ${URI_GET_CONFIG} >> ${EXPORT_CONF_LOCATION})
 echo "Fetched the wconfig for device" ${DEVICE_ID} "of overlay" ${OVERLAY_ID} "and updated " ${EXPORT_CONF_LOCATION}
