@@ -43,7 +43,7 @@ BEARER_HEADER="Authorization: Bearer "${TOKEN}
 echo "getting the wconfig.."
 echo > ${EXPORT_CONF_LOCATION} #clear the file
 echo "[Interface]" >> ${EXPORT_CONF_LOCATION}
-echo "Address = 10.0.0.1/24" >> ${EXPORT_CONF_LOCATION}
+echo "Address = 10.0.0.1/32" >> ${EXPORT_CONF_LOCATION}
 echo "PrivateKey = +F4/cEnrJ4JMiCeHxOHlf7pfKRVvA9wBYFjXEMY7hW4=" >> ${EXPORT_CONF_LOCATION}
 echo "ListenPort = 51820" >> ${EXPORT_CONF_LOCATION}
 echo "" >> ${EXPORT_CONF_LOCATION}
@@ -52,3 +52,13 @@ echo "Fetched the wconfig for device" ${DEVICE_ID} "of overlay" ${OVERLAY_ID} "a
 sed -i -e 's/Peer 1/Peer/g' ${EXPORT_CONF_LOCATION}
 sed -i -e 's/Peer 2/Peer/g' ${EXPORT_CONF_LOCATION}
 rm ${EXPORT_CONF_LOCATION}-e
+
+# UPDATE THE CONFIG OF CLIENT APP - THIS IS NOT RELATED TO WIREGUARD BUT WITH THE APP SETUP
+CONFIG_FILE="/home/vagrant/client_app/config.json"
+#CONFIG_FILE="config.json"
+
+echo "{
+        \"server_ip\":\"172.48.48.51\", 
+        \"server_port\":\"8080\",
+        \"log_file\":\"/var/log/client.log\"
+    }" > ${CONFIG_FILE}

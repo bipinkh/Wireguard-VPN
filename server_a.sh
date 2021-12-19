@@ -43,7 +43,7 @@ BEARER_HEADER="Authorization: Bearer "${TOKEN}
 echo "getting the wconfig.."
 echo > ${EXPORT_CONF_LOCATION} #clear the file
 echo "[Interface]" >> ${EXPORT_CONF_LOCATION}
-echo "Address = 10.0.0.3/24" >> ${EXPORT_CONF_LOCATION}
+echo "Address = 10.0.0.3/32" >> ${EXPORT_CONF_LOCATION}
 echo "PrivateKey = wKljiWJG3zjm6lrXJToyxx7O1tRVdYL7Lgf+ZuhsV04=" >> ${EXPORT_CONF_LOCATION}
 echo "ListenPort = 51820" >> ${EXPORT_CONF_LOCATION}
 echo "" >> ${EXPORT_CONF_LOCATION}
