@@ -51,7 +51,6 @@ response1=$(curl -s --request GET -H "${HEADER_CONTENTTYPE}" -H "${HEADER_APIKEY
 echo "Fetched the wconfig for device" ${DEVICE_ID} "of overlay" ${OVERLAY_ID} "and updated " ${EXPORT_CONF_LOCATION}
 sed -i -e 's/Peer 1/Peer/g' ${EXPORT_CONF_LOCATION}
 sed -i -e 's/Peer 2/Peer/g' ${EXPORT_CONF_LOCATION}
-rm ${EXPORT_CONF_LOCATION}-e
 
 
 # UPDATE THE CONFIG OF CLIENT APP - THIS IS NOT RELATED TO WIREGUARD BUT WITH THE APP SETUP
@@ -62,3 +61,7 @@ echo "{
         \"server_port\":\"8080\",
         \"log_file\":\"/var/log/client.log\"
     }" > ${CONFIG_FILE}
+
+
+# up the qg0
+wg-quick up wg0
