@@ -5,7 +5,7 @@ echo ""
 echo 
 # Check cURL command if available (required), abort if does not exists
 type curl >/dev/null 2>&1 || { echo >&2 "Required curl but it's not installed. Aborting."; exit 1; }
-apt install jq -y
+apt install wireguard jq -y
 
 echo
 
@@ -43,6 +43,7 @@ BEARER_HEADER="Authorization: Bearer "${TOKEN}
 echo "getting the wconfig.."
 echo > ${EXPORT_CONF_LOCATION} #clear the file
 echo "[Interface]" >> ${EXPORT_CONF_LOCATION}
+echo "Address = 10.0.0.3/24" >> ${EXPORT_CONF_LOCATION}
 echo "PrivateKey = wKljiWJG3zjm6lrXJToyxx7O1tRVdYL7Lgf+ZuhsV04=" >> ${EXPORT_CONF_LOCATION}
 echo "ListenPort = 51820" >> ${EXPORT_CONF_LOCATION}
 echo "" >> ${EXPORT_CONF_LOCATION}
