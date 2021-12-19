@@ -17,7 +17,7 @@ x-api-key: BC0B9f28FbD28CDC81c441A2db5Ea950
 
 
 ### Get info of one overlay
-GET http://meshmash.vikaa.fi:49324/overlays/7150e56522ba4c6f94bb43833dc84259
+GET http://meshmash.vikaa.fi:49324/overlays/ec843b7cb8ec481f8b83e311a95bcaed
 Content-Type: application/json
 x-api-key: BC0B9f28FbD28CDC81c441A2db5Ea950
 

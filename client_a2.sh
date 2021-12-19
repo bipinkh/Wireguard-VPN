@@ -48,4 +48,6 @@ echo "ListenPort = 51820" >> ${EXPORT_CONF_LOCATION}
 echo "" >> ${EXPORT_CONF_LOCATION}
 response1=$(curl -s --request GET -H "${HEADER_CONTENTTYPE}" -H "${HEADER_APIKEY}" -H "${BEARER_HEADER}" ${URI_GET_CONFIG} >> ${EXPORT_CONF_LOCATION})
 echo "Fetched the wconfig for device" ${DEVICE_ID} "of overlay" ${OVERLAY_ID} "and updated " ${EXPORT_CONF_LOCATION}
-
+sed -i -e 's/Peer 1/Peer/g' ${EXPORT_CONF_LOCATION}
+sed -i -e 's/Peer 2/Peer/g' ${EXPORT_CONF_LOCATION}
+rm ${EXPORT_CONF_LOCATION}-e

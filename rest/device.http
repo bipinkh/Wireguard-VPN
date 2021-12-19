@@ -40,7 +40,7 @@ x-api-key: BC0B9f28FbD28CDC81c441A2db5Ea950
 
 
 ### Get info
-GET http://meshmash.vikaa.fi:49324/devices/0aafd401e6704faf99ca413b2410b569
+GET http://meshmash.vikaa.fi:49324/devices/6ee5299ef87f458dba185aa4d60aa111
 x-api-key: BC0B9f28FbD28CDC81c441A2db5Ea950
 
 
