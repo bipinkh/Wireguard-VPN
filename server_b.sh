@@ -5,7 +5,7 @@ echo ""
 echo 
 # Check cURL command if available (required), abort if does not exists
 type curl >/dev/null 2>&1 || { echo >&2 "Required curl but it's not installed. Aborting."; exit 1; }
-apt install jq
+apt install jq -y
 
 echo
 
